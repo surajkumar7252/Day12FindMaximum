@@ -14,28 +14,28 @@ public class FindMaximum<findMaximum extends Comparable<findMaximum>>
 	static Scanner inputFeed=new Scanner(System.in);
 	public  findMaximum first,second,third;
 	
-	public findMaximum findingMaximum(findMaximum first,findMaximum second,findMaximum third) {
-		findMaximum greatest = first;
-		if (second.compareTo(greatest) > 0) {
-			greatest =second;
-		}
-		if (third.compareTo(greatest) > 0) {
-			greatest = third;
-		}
-		return greatest;
-	}
+	private findMaximum[] requiredDataArray;
 	
-	public FindMaximum(findMaximum first,findMaximum second,findMaximum third) {
-		this.first =first;
-		this.second = second;
-		this.third = third;
+	public FindMaximum(findMaximum ...requiredDataArray) {
+		this.requiredDataArray =requiredDataArray;
 		
 	}
 	
-	public findMaximum testMaximum() {
-		return findingMaximum(first,second,third);
-	}
+	 
+	 
+	
+		public findMaximum testMaximum() {
+			return maxElement(requiredDataArray);
+		}
 
+		public <findMaximum extends Comparable<findMaximum>> findMaximum maxElement(findMaximum[]inputList) {
+			int greatest = 0;
+			for(int index = 1; index < inputList.length; index++) 
+				if (inputList[index].compareTo(inputList[greatest]) > 0) 
+					greatest = index;
+			return inputList[greatest];
+		}
+	
 	
 	void setValuesInterger() {
 		
