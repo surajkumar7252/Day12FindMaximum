@@ -7,29 +7,65 @@ import org.junit.Test;
 public class FindMaximumTest 
 {   
 	@Test
-	public void FirstNumberAsMaxNumber_ShouldReturnTheFirstNumber() {
-		FindMaximum findingMaxNum=new FindMaximum();
-		Integer firstNumber=75,secondNumber=10, thirdNumber=55;
-		Integer maxNumber=findingMaxNum.findingMaximum(firstNumber,secondNumber, thirdNumber);
-		Assert.assertEquals(firstNumber,maxNumber);
+	public void FirstIntegerNumberAsMaxNumber_ShouldReturnTheFirstNumber() {
+		System.out.println("This is First Integer Max Test");
+		FindMaximum findingMaxNum1=new FindMaximum();
+		findingMaxNum1.setValuesInterger();
+		Integer maxNumber=findingMaxNum1.findingMaximum();
+		Assert.assertEquals(findingMaxNum1.firstNumber,maxNumber);
+		
+	}
+	@Test
+	public void SecondIntegerNumberAsMaxNumber_ShouldReturnTheSecondNumber() {
+		System.out.println("This is Second Integer Max Test");
+		
+		FindMaximum findingMaxNum2=new FindMaximum();
+		findingMaxNum2.setValuesInterger();
+		Integer maxNumber=findingMaxNum2.findingMaximum();
+		Assert.assertEquals(findingMaxNum2.secondNumber,maxNumber);
+	}
+	
+	
+	@Test
+	public void ThirdIntegerNumberAsMaxNumber_ShouldReturnTheThirdNumber() {
+		System.out.println("This is Third Integer Max Test");
+		
+		FindMaximum findingMaxNum3=new FindMaximum();
+		findingMaxNum3.setValuesInterger();
+		Integer maxNumber=findingMaxNum3.findingMaximum();
+		Assert.assertEquals(findingMaxNum3.thirdNumber,maxNumber);
 	}
 	
 	@Test
-	public void SecondNumberAsMaxNumber_ShouldReturnTheSecondNumber() {
-		FindMaximum findingMaxNum=new FindMaximum();
-		Integer firstNumber=10,secondNumber=75, thirdNumber=55;
-		Integer maxNumber=findingMaxNum.findingMaximum(firstNumber,secondNumber, thirdNumber);
-		Assert.assertEquals(secondNumber,maxNumber);
+	public void FirstFloatNumberAsMaxNumber_ShouldReturnTheFirstNumber() {
+		System.out.println("This is First Float Max Test");
+		FindMaximum findingMaxNum1=new FindMaximum();
+		findingMaxNum1.setValuesInterger();
+		Float maxNumber=findingMaxNum1.findingMaximumFloat();
+		Assert.assertEquals(findingMaxNum1.firstFloatNumber,maxNumber);
+		
+	}
+	@Test
+	public void SecondFloatNumberAsMaxNumber_ShouldReturnTheSecondNumber() {
+		System.out.println("This is Second Float Max Test");
+		
+		FindMaximum findingMaxNum2=new FindMaximum();
+		findingMaxNum2.setValuesInterger();
+		Float maxNumber=findingMaxNum2.findingMaximumFloat();
+		Assert.assertEquals(findingMaxNum2.secondFloatNumber,maxNumber);
 	}
 	
 	
 	@Test
-	public void ThirdNumberAsMaxNumber_ShouldReturnTheThirdNumber() {
-		FindMaximum findingMaxNum=new FindMaximum();
-		Integer firstNumber=10,secondNumber=55, thirdNumber=75;
-		Integer maxNumber=findingMaxNum.findingMaximum(firstNumber,secondNumber, thirdNumber);
-		Assert.assertEquals(thirdNumber,maxNumber);
+	public void ThirdFloatNumberAsMaxNumber_ShouldReturnTheThirdNumber() {
+		System.out.println("This is Third Float Max Test");
+		
+		FindMaximum findingMaxNum3=new FindMaximum();
+		findingMaxNum3.setValuesInterger();
+		Float maxNumber=findingMaxNum3.findingMaximumFloat();
+		Assert.assertEquals(findingMaxNum3.thirdFloatNumber,maxNumber);
 	}
-    
+	
+	
    
 }

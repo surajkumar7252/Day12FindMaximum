@@ -6,12 +6,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class FindMaximum 
-{   
-	
+{   public static Integer firstNumber,secondNumber,thirdNumber;
+    public static Float firstFloatNumber,secondFloatNumber,thirdFloatNumber;
+
 	public static Logger log=LogManager.getLogger(FindMaximum.class);
 	
 	static Scanner inputFeed=new Scanner(System.in); 
-	public Integer findingMaximum(Integer firstNumber,Integer secondNumber,Integer thirdNumber) {
+	public Integer findingMaximum() {
 		Integer maxNumber=0;
 		if(firstNumber.compareTo(maxNumber)>0) {
 			maxNumber=firstNumber;
@@ -27,18 +28,55 @@ public class FindMaximum
 		        
 	}
 	
+	public Float findingMaximumFloat() {
+		Float maxNumber=0.0f;
+		if(firstFloatNumber.compareTo(maxNumber)>0) {
+			maxNumber=firstFloatNumber;
+		}
+		if(secondFloatNumber.compareTo(maxNumber)>0) {
+			maxNumber=secondFloatNumber;
+		}
+		if(thirdFloatNumber.compareTo(maxNumber)>0) {
+			maxNumber=thirdFloatNumber;
+		}
+		
+	     return maxNumber;
+		        
+	}
 	
-    public static void main( String[] args )
-    {    Integer result;
-    	FindMaximum findMaximum=new FindMaximum ();
-    	 log.debug( "Enter First Number: " );
-    	Integer firstNumber = inputFeed.nextInt();
+	void setValuesInterger() {
+		log.debug( "Enter First Number: " );
+    	firstNumber = inputFeed.nextInt();
     	log.debug( "Enter Second Number: " );
-    	Integer secondNumber = inputFeed.nextInt();
+    	secondNumber = inputFeed.nextInt();
     	log.debug( "Enter Third Number: " );
-    	Integer thirdNumber = inputFeed.nextInt();
-    	result=findMaximum.findingMaximum(firstNumber,secondNumber,thirdNumber);
-    	log.debug( "Max Number : "+result );
-       
+    	thirdNumber = inputFeed.nextInt();
+		}
+	
+	void setValuesFloat() {
+		log.debug( "Enter First Number: " );
+    	firstFloatNumber = inputFeed.nextFloat();
+    	log.debug( "Enter Second Number: " );
+    	secondFloatNumber = inputFeed.nextFloat();
+    	log.debug( "Enter Third Number: " );
+    	thirdFloatNumber = inputFeed.nextFloat();
+		}
+    public static void main( String[] args )
+    {    
+         Integer choice;
+    	FindMaximum findMaximum=new FindMaximum ();
+    	log.debug( "Select the type of number you want to compare : ");
+    	log.debug( "1.Integer ");
+    	log.debug( "2.Float ");
+    	choice = inputFeed.nextInt();
+    	switch(choice) {
+    	case 1: findMaximum.setValuesInterger();
+    	        log.debug( "Max Number : "+ findMaximum.findingMaximum());
+    	        break;
+    	case 2: findMaximum.setValuesFloat();
+                log.debug( "Max Number : "+ findMaximum.findingMaximumFloat());
+                break;
+    	}
+    	   
     }
 }
