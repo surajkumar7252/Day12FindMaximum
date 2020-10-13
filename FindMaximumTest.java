@@ -66,6 +66,36 @@ public class FindMaximumTest
 		Assert.assertEquals(findingMaxNum3.thirdFloatNumber,maxNumber);
 	}
 	
+	@Test
+	public void FirstStringAsMaxString_ShouldReturnTheFirstString() {
+		System.out.println("This is First String Max Test");
+		FindMaximum findingMaxNum1=new FindMaximum();
+		findingMaxNum1.setValuesString();
+		 String maxString=findingMaxNum1.findingMaximumString();
+		 Assert.assertEquals(findingMaxNum1.firstString,maxString);
+		
+	}
+	@Test
+	public void  SecondStringAsMaxString_ShouldReturnTheSecondString() {
+		System.out.println("This is Second  String Max Test");
+		
+		FindMaximum findingMaxNum2=new FindMaximum();
+		findingMaxNum2.setValuesString();
+		 String maxString=findingMaxNum2.findingMaximumString();
+		 Assert.assertEquals(findingMaxNum2.secondString,maxString);
+	}
+	
+	
+	@Test
+	public void  ThirdStringAsMaxString_ShouldReturnTheThirdString() {
+		System.out.println("This is Third  StringMax Test");
+		
+		 FindMaximum findingMaxNum3=new FindMaximum();
+		 findingMaxNum3.setValuesString();
+		 String maxString=findingMaxNum3.findingMaximumString();
+		 Assert.assertEquals(findingMaxNum3.thirdString,maxString);
+	}
+	
 	
    
 }
