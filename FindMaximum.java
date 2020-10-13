@@ -24,16 +24,22 @@ public class FindMaximum<findMaximum extends Comparable<findMaximum>>
 	 
 	 
 	
-		public findMaximum testMaximum() {
-			return maxElement(requiredDataArray);
+		public void testMaximum() {
+			 printMax(maxElement(requiredDataArray));
+			
 		}
-
+    
+		private void printMax(findMaximum greatest) {
+			log.info("The Greatest one is : " + greatest);
+			
+		}
 		public <findMaximum extends Comparable<findMaximum>> findMaximum maxElement(findMaximum[]inputList) {
 			int greatest = 0;
 			for(int index = 1; index < inputList.length; index++) 
 				if (inputList[index].compareTo(inputList[greatest]) > 0) 
 					greatest = index;
 			return inputList[greatest];
+			
 		}
 	
 	
@@ -79,15 +85,15 @@ public class FindMaximum<findMaximum extends Comparable<findMaximum>>
      	switch(choice) {
      	case 1: FindMaximum<Integer> findMaxInt=new FindMaximum<Integer>( firstNumber,secondNumber,thirdNumber); 
      	        findMaxInt.setValuesInterger();
-     	        log.debug( "Max Integer: "+ findMaxInt.testMaximum());
+     	        findMaxInt.testMaximum();
      	        break;
      	case 2: FindMaximum<Float> findMaxFloat=new FindMaximum<Float>( firstFloatNumber,secondFloatNumber,thirdFloatNumber); 
 	        findMaxFloat.setValuesFloat();
-	        log.debug( "Max Float : "+ findMaxFloat.testMaximum());
+	         findMaxFloat.testMaximum();
 	        break;
      	case 3: FindMaximum<Integer> findMaxString=new FindMaximum<Integer>( firstStringLength,secondStringLength,thirdStringLength); 
 	        findMaxString.setValuesInterger();
-	        log.debug( "Max String size: "+ findMaxString.testMaximum());
+	        findMaxString.testMaximum();
 	        break;
      	}
         
